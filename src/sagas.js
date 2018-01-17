@@ -15,7 +15,7 @@ function* workerSaga() {
     const response = yield call(fetchDog);
     const dog = response.data.message;
 
-    // dispatch a success action to the store with the new cat
+    // dispatch a success action to the store with the new dog
     yield put({ type: "API_CALL_SUCCESS", dog });
   } catch (error) {
     // dispatch a failure action to the store with the error

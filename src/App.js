@@ -3,11 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import { connect } from "react-redux";
-import { apiCallRequest } from "./redux";
 
 class App extends Component {
   render() {
-    const { fetching, dog, onRequestDog } = this.props;
+    const { fetching, dog, onRequestDog, error } = this.props;
 
     return (
       <div className="App">
@@ -16,11 +15,13 @@ class App extends Component {
           <h1 className="App-title">Welcome to Dog Saga</h1>
         </header>
 
-        {dog ? (
+        {dog && !error ? (
           <p className="App-intro">Keep clicking for new dogs</p>
         ) : (
           <p className="App-intro">Replace the React icon with a dog!</p>
         )}
+
+        {error && <p className="App-intro">Uh oh - something went wrong!</p>}
 
         {fetching ? (
           <button disabled>Fetching...</button>
@@ -42,7 +43,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestDog: () => dispatch(apiCallRequest())
+    onRequestDog: () => dispatch({ type: "API_CALL_REQUEST" })
   };
 };
 

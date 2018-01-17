@@ -1,30 +1,39 @@
-/*==============================
-  ACTIONS
-==============================*/
+/* === ACTIONS === */
 
 //action types
-export const API_CALL_REQUEST = "API_CALL_REQUEST";
-export const API_CALL_SUCCESS = "API_CALL_SUCCESS";
-export const API_CALL_FAILURE = "API_CALL_FAILURE";
+const API_CALL_REQUEST = "API_CALL_REQUEST";
+const API_CALL_SUCCESS = "API_CALL_SUCCESS";
+const API_CALL_FAILURE = "API_CALL_FAILURE";
+
+/* 
+
+ We're not gonna use action creators in this app.
+ 
+ For something so simple, they may muddy the waters.
+ 
+ Also, you'll see how redux-saga handles and dispatches actions
+ more clearly (in my opinon) without them.
+
+ For those who wish to stick to convention, here are some
+ action creators.
 
 //action creators
-export function apiCallRequest() {
+function apiCallRequest() {
   return { type: API_CALL_REQUEST };
 }
 
-export function apiCallSuccess(data) {
+function apiCallSuccess(data) {
   return { type: API_CALL_SUCCESS, data };
 }
 
-export function apiCallFailure(error) {
+function apiCallFailure(error) {
   return { type: API_CALL_FAILURE, error };
 }
 
-/*==============================
-  REDUCER
-==============================*/
+ */
 
-//intial state for our reducer
+/* === REDUCER === */
+
 const initialState = {
   fetching: false,
   dog: null,
