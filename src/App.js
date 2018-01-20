@@ -15,13 +15,13 @@ class App extends Component {
           <h1 className="App-title">Welcome to Dog Saga</h1>
         </header>
 
-        {dog && !error ? (
+        {dog ? (
           <p className="App-intro">Keep clicking for new dogs</p>
         ) : (
           <p className="App-intro">Replace the React icon with a dog!</p>
         )}
 
-        {error && <p className="App-intro">Uh oh - something went wrong!</p>}
+        {error && <p style={{ color: "red" }}>Uh oh - something went wrong!</p>}
 
         {fetching ? (
           <button disabled>Fetching...</button>

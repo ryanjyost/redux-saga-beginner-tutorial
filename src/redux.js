@@ -12,7 +12,7 @@ const API_CALL_FAILURE = "API_CALL_FAILURE";
  For something so simple, they may muddy the waters.
  
  Also, you'll see how redux-saga handles and dispatches actions
- more clearly (in my opinon) without them.
+ more clearly (in my opinion) without them.
 
  For those who wish to stick to convention, here are some
  action creators.
@@ -49,11 +49,9 @@ export function reducer(state = initialState, action) {
       return { ...state, fetching: false, dog: action.dog };
       break;
     case API_CALL_FAILURE:
-      return { ...state, fetching: false, error: action.error };
+      return { ...state, fetching: false, dog: null, error: action.error };
       break;
     default:
       return state;
   }
 }
-
-export default reducer;

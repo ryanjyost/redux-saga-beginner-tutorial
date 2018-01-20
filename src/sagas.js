@@ -1,15 +1,12 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
 
-// function to return api response
-function fetchDog() {
-  return axios({
-    method: "get",
-    url: "https://dog.ceo/api/breeds/image/random"
-  });
+// watcher saga: watches for actions dispatched to the store, starts worker saga
+export function* watcherSaga() {
+  yield takeLatest("API_CALL_REQUEST", workerSaga);
 }
 
-//worker saga: makes the api call when watcher saga sees the action
+// worker saga: makes the api call when watcher saga sees the action
 function* workerSaga() {
   try {
     const response = yield call(fetchDog);
@@ -23,9 +20,10 @@ function* workerSaga() {
   }
 }
 
-// watcher saga: watches for actions dispatched to the store, starts worker saga
-export function* watcherSaga() {
-  yield takeLatest("API_CALL_REQUEST", workerSaga);
+// function that returns api response
+function fetchDog() {
+  return axios({
+    method: "get",
+    url: "https://dog.ceo/api/breeds/image/random"
+  });
 }
-
-export default watcherSaga;
