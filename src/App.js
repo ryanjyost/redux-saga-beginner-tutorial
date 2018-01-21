@@ -47,7 +47,7 @@ class App extends Component {
             style={{ padding: "0px 5%" }}
             href="https://twitter.com/share?ref_src=twsrc%5Etfw"
             className="twitter-share-button"
-            data-text="Check out Dog Saga - A Redx-Saga Beginner Tutorial"
+            data-text="Check out Dog Saga - A Redux-Saga Beginner Tutorial"
             data-url="https://ryanjyost.github.io/redux-saga-beginner-tutorial/"
             data-related="ryanjyost"
             data-show-count="false"
