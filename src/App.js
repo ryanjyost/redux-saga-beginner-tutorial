@@ -32,7 +32,7 @@ class App extends Component {
         <div style={{ display: "block", padding: "50px 0px 10px 0px" }}>
           <a
             style={{ padding: "0px 5%" }}
-            class="github-button"
+            className="github-button"
             href="https://github.com/ryanjyost/redux-saga-beginner-tutorial"
             data-icon="octicon-star"
             data-show-count="true"
@@ -46,7 +46,7 @@ class App extends Component {
           <a
             style={{ padding: "0px 5%" }}
             href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-            class="twitter-share-button"
+            className="twitter-share-button"
             data-text="Check out Dog Saga - A Redx-Saga Beginner Tutorial"
             data-url="https://ryanjyost.github.io/redux-saga-beginner-tutorial/"
             data-related="ryanjyost"
@@ -59,7 +59,7 @@ class App extends Component {
           <a
             style={{ padding: "0px 5%" }}
             href="https://twitter.com/ryanjyost?ref_src=twsrc%5Etfw"
-            class="twitter-follow-button"
+            className="twitter-follow-button"
             data-show-count="false"
           >
             Follow @ryanjyost
