@@ -31,11 +31,17 @@ class App extends Component {
 
         <div style={{ display: "block", padding: "50px 0px 10px 0px" }}>
           <a
+            href="https://hackernoon.com/redux-saga-tutorial-for-beginners-and-dog-lovers-aa69a17db645"
+            target="_blank"
+            style={{ display: "block", padding: "20px 5%" }}
+          >
+            Read the tutorial here
+          </a>
+          <a
             style={{ padding: "0px 5%" }}
             className="github-button"
             href="https://github.com/ryanjyost/redux-saga-beginner-tutorial"
             data-icon="octicon-star"
-            data-show-count="true"
             aria-label="Star ryanjyost/dom-events on GitHub"
           >
             Star
